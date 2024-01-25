@@ -1,0 +1,6 @@
+syntax = "proto3";
+package me.zoeaubert.api.v1;
+
+message Faq {
+    string text = 1;
+}

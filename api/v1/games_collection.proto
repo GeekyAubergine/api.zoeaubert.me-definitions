@@ -1,0 +1,36 @@
+syntax = "proto3";
+package me.zoeaubert.api.v1;
+
+message GameAchievement {
+    string id = 1;
+    string internal_name = 2;
+    string display_name = 3;
+    string description = 4;
+    string image_unlocked_url = 5;
+    string image_locked_url = 6;
+    optional string unlocked_date = 7;
+}
+
+message Game {
+    uint32 id = 1;
+    string name = 2;
+    string image_url = 3;
+    uint32 playtime = 4;
+    string last_played = 5;
+    string link_url = 6;
+    uint32 achievements_unlocked = 7;
+    uint32 achievements_total = 8;
+    repeated GameAchievement achievements = 9;
+    repeated uint32 achievements_unlocked_ids = 10;
+    repeated uint32 achievements_locked_ids = 11;
+    repeated uint32 achievements_by_unlocked_date = 12;
+}
+
+message GameCollection {
+    map<uint32, Game> games = 1;
+    repeated uint32 game_ids = 2;
+    uint32 total_playtime = 3;
+    repeated uint32 games_by_last_played = 4;
+    repeated uint32 games_by_playtime = 5;
+    repeated uint32 games_by_percentage_achievements = 6;
+}
