@@ -1,5 +1,5 @@
 syntax = "proto3";
-package me.zoeaubert.api;
+package me.zoeaubert.api.v1;
 
 message About {
     string text = 1;
